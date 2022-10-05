@@ -1,0 +1,27 @@
+import java.util.* ;
+import java.io.*; 
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static void setZeros(int matrix[][]) {
+        // Write your code here..
+         int n = matrix.length;        // Rows
+        int m = matrix[0].length;    // Columns
+        boolean rows[] = new boolean[n];
+        boolean cols[] = new boolean[m];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if (matrix[i][j] == 0){
+                    rows[i] = true;
+                    cols[j] = true;
+                }
+            }
+        }
+        
+        for(int i=0;i<n;i++)
+            for(int j=0;j<m;j++)
+                if(rows[i] == true || cols[j] == true)
+                    matrix[i][j] = 0;
+    }
+
+}
